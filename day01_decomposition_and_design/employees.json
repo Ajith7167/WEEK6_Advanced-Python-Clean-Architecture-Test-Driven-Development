@@ -1,0 +1,32 @@
+[
+    {
+        "employee_id": 101,
+        "name": "giri",
+        "department": "cs",
+        "salary": 14000.0
+    },
+    {
+        "employee_id": 167,
+        "name": "Vemula",
+        "department": "DS",
+        "salary": 50000.0
+    },
+    {
+        "employee_id": 102,
+        "name": "Sarath",
+        "department": "IT",
+        "salary": 20000.0
+    },
+    {
+        "employee_id": 103,
+        "name": "Varun",
+        "department": "CSE",
+        "salary": 20000.0
+    },
+    {
+        "employee_id": 104,
+        "name": "Kiran",
+        "department": "AI",
+        "salary": 25000.0
+    }
+]
