@@ -18,17 +18,6 @@ class EmployeeService:
         self._validate_employee(employee)
         self.repository.save_all(employees + [employee])
 
-    def update_employee(self, employee: Employee) -> None:
-        employees = self.repository.load_all()
-        for index, existing in enumerate(employees):
-            if existing.employee_id == employee.employee_id:
-                self._validate_employee(employee)
-                employees[index] = employee
-                self.repository.save_all(employees)
-                return
-
-        raise ValueError("Employee not found")
-
     def _validate_employee(self, employee: Employee) -> None:
         if employee.employee_id <= 0:
             raise ValueError("Employee ID must be positive")

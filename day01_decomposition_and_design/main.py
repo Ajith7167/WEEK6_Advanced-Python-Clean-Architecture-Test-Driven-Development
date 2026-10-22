@@ -11,15 +11,14 @@ def main() -> None:
     while True:
         print("\nEmployee Management")
         print("1. Add employee")
-        print("2. Update employee")
-        print("3. Exit")
+        print("2. Exit")
         choice = input("Select an option: ").strip()
 
-        if choice == "3":
+        if choice == "2":
             break
 
-        if choice not in {"1", "2"}:
-            print("Invalid option. Please choose 1, 2, or 3.")
+        if choice != "1":
+            print("Invalid option. Please choose 1 or 2.")
             continue
 
         try:
@@ -29,12 +28,8 @@ def main() -> None:
             salary = float(input("Salary: "))
             employee = Employee(employee_id, name, department, salary)
 
-            if choice == "1":
-                service.add_employee(employee)
-                print("Employee added successfully")
-            else:
-                service.update_employee(employee)
-                print("Employee updated successfully")
+            service.add_employee(employee)
+            print("Employee added successfully")
         except ValueError as error:
             print(f"Error: {error}")
 

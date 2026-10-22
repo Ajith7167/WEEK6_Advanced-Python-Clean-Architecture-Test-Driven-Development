@@ -35,21 +35,3 @@ def test_negative_salary(tmp_path):
     with pytest.raises(ValueError, match="Salary cannot be negative"):
         service.add_employee(employee)
 
-
-def test_update_employee(tmp_path):
-    repository = EmployeeRepository(str(tmp_path / "employees.json"))
-    service = EmployeeService(repository)
-    service.add_employee(Employee(101, "Ajith", "IT", 30000.0))
-
-    updated_employee = Employee(101, "Ajith Kumar", "Engineering", 35000.0)
-    service.update_employee(updated_employee)
-
-    assert service.get_employees() == [updated_employee]
-
-
-def test_update_missing_employee(tmp_path):
-    repository = EmployeeRepository(str(tmp_path / "employees.json"))
-    service = EmployeeService(repository)
-
-    with pytest.raises(ValueError, match="Employee not found"):
-        service.update_employee(Employee(101, "Ajith", "IT", 30000.0))
