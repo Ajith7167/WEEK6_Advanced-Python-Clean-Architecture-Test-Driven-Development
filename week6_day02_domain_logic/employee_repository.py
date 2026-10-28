@@ -5,7 +5,7 @@ from pathlib import Path
 from employee import Employee
 
 
-class JsonEmployeeRepository:
+class JsonEmployeeRepository: 
     def __init__(self, file_path: str = "employees.json") -> None:
         self.file_path = Path(file_path)
 
